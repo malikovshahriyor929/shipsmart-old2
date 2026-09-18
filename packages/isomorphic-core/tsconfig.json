@@ -1,0 +1,12 @@
+{
+  "extends": "@shipsmart/typescript-config/react-library.json",
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
+    "paths": {
+      "@core/*": ["./src/*"]
+    }
+  },
+  "include": [".", "./types/**/*.ts"]
+}

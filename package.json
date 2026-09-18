@@ -1,0 +1,59 @@
+{
+  "name": "shipsmart-admin",
+  "version": "7.6.2",
+  "description": "Admin dashboard application",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "pnpm": {
+    "overrides": {
+      "react": "19.0.0",
+      "@types/react": "^19.0.12",
+      "react-dom": "19.0.0",
+      "@types/react-dom": "^19.0.4",
+      "caniuse-lite": "1.0.30001799",
+      "baseline-browser-mapping": "2.10.38"
+    }
+  },
+  "overrides": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4"
+  },
+  "scripts": {
+    "dev": "NODE_OPTIONS='--max-old-space-size=8192' turbo dev --filter=@shipsmart/admin",
+    "dev:admin": "NODE_OPTIONS='--max-old-space-size=8192' turbo dev --filter=@shipsmart/admin",
+    "lint": "turbo lint --filter=@shipsmart/admin",
+    "type:check": "turbo type:check --filter=@shipsmart/admin",
+    "build": "NODE_OPTIONS='--max-old-space-size=4096' turbo build --filter=@shipsmart/admin",
+    "start": "turbo start --filter=@shipsmart/admin",
+    "clean": "turbo clean && rm -rf node_modules .turbo",
+    "cache:clean": "turbo cache:clean && rm -rf .turbo",
+    "admin:dev": "NODE_OPTIONS='--max-old-space-size=8192' turbo dev --filter=@shipsmart/admin",
+    "admin:dev2": "turbo dev --filter=@shipsmart/admin",
+    "admin:lint": "turbo lint --filter=@shipsmart/admin",
+    "admin:build": "NODE_OPTIONS='--max-old-space-size=4096' turbo build --filter=@shipsmart/admin",
+    "admin:start": "turbo start --filter=@shipsmart/admin",
+    "admin:clean": "turbo clean --filter=@shipsmart/admin",
+    "gen-icons": "turbo gen-icons --filter=core",
+    "prepare": "husky",
+    "set:admin": "cp project.admin.json .vercel/project.json",
+    "deploy:admin": "pnpm set:admin && vercel --prod"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.13",
+    "@types/uuid": "^10.0.0",
+    "eslint": "9.23.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "turbo": "2.4.4",
+      "@shipsmart/typescript-config": "file:packages/config-typescript"
+  },
+  "packageManager": "pnpm@9.1.4"
+}
